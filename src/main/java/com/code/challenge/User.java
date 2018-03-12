@@ -3,5 +3,5 @@ package com.code.challenge;
 public interface User {
     Payments getPayments();
 
-    void addIncomingPayment(Transaction incomingTransaction);
+    void addIncomingPayment(Payment incomingPayment);
 }

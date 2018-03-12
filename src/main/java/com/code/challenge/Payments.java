@@ -5,27 +5,27 @@ import java.util.List;
 
 public class Payments {
 
-    List<Transaction> incoming;
-    List<Transaction> outgoing;
+    List<Payment> incoming;
+    List<Payment> outgoing;
 
     public Payments(){
-        incoming = new ArrayList<Transaction>();
-        outgoing = new ArrayList<Transaction>();
+        incoming = new ArrayList<Payment>();
+        outgoing = new ArrayList<Payment>();
     }
 
-    public List<Transaction> getIncoming() {
+    public List<Payment> getIncoming() {
         return incoming;
     }
 
-    public List<Transaction> getOutgoing() {
+    public List<Payment> getOutgoing() {
         return outgoing;
     }
 
-    public void addIncoming(Transaction incoming) {
+    public void addIncoming(Payment incoming) {
         this.incoming.add(incoming);
     }
 
-    public void addOutgoing(Transaction outgoing) {
+    public void addOutgoing(Payment outgoing) {
         this.outgoing.add(outgoing);
     }
 }

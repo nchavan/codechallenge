@@ -10,34 +10,42 @@ public class PaymentInteractionsTest {
 
     @Test
     public void testEmptyPaymentInteractions() {
-        User cashManagerUser = new CashManagerUser();
-        Payments payments = cashManagerUser.getPayments();
-        assertNoIncomingOutgoindPaymentTransactions(payments, 0, 0);
-    }
+        Payments payments = new Manager().getPayments();
 
-    private void assertNoIncomingOutgoindPaymentTransactions(Payments payments, int incomingSize, int outgoingSize) {
-        assertNotNull(payments);
-        assertThat(payments.getIncoming().size(),is(incomingSize));
-        assertThat(payments.getOutgoing().size(),is(outgoingSize));
+        assertNoIncomingAndOutgoingPaymentTransactions(payments);
     }
 
     @Test
     public void testValidPaymentInteractionsWithOneIncomingPaymentAndNoOutgoingPayment() {
-        User cashManagerUser = new CashManagerUser();
-        Transaction incomingTransaction = new Transaction("UK", "000001", "571986", "THEIRSENDREF001", "31122016", "GBP", "975000", "");
-        cashManagerUser.addIncomingPayment(incomingTransaction);
-        Payments payments = cashManagerUser.getPayments();
-        assertOneValidIncomingPaymentTransaction(payments, incomingTransaction, 1, 0);
+        User manager = new Manager();
+        Payment incomingPayment = new Payment("UK", "000001",
+                "571986", "THEIRSENDREF001", "31122016", "GBP", "975000", "");
+
+        manager.addIncomingPayment(incomingPayment);
+        Payments payments = manager.getPayments();
+
+        assertOneValidIncomingPaymentTransaction(payments, incomingPayment, 1, 0);
     }
 
-    private void assertOneValidIncomingPaymentTransaction(Payments payments, Transaction incomingTransaction, int incomingSize, int outgoingSize) {
+    private void assertNoIncomingAndOutgoingPaymentTransactions(Payments payments) {
+        assertNotNull(payments);
+        assertThat(payments.getIncoming().size(),is(0));
+        assertThat(payments.getOutgoing().size(),is(0));
+    }
+
+    private void assertIncomingAndOutgoingPaymentTransactions(Payments payments, int incomingSize, int outgoingSize) {
         assertNotNull(payments);
         assertThat(payments.getIncoming().size(),is(incomingSize));
         assertThat(payments.getOutgoing().size(),is(outgoingSize));
-        assertThat(payments.getIncoming().get(0).getMessageIdentifier(),is(incomingTransaction.getMessageIdentifier()));
-        assertThat(payments.getIncoming().get(0).getAmount(),is(incomingTransaction.getAmount()));
-        assertThat(payments.getIncoming().get(0).getCurrency(),is(incomingTransaction.getCurrency()));
     }
 
+    private void assertOneValidIncomingPaymentTransaction(Payments payments, Payment incomingPayment, int incomingSize, int outgoingSize) {
+        assertNotNull(payments);
+        assertThat(payments.getIncoming().size(),is(incomingSize));
+        assertThat(payments.getOutgoing().size(),is(outgoingSize));
+        assertThat(payments.getIncoming().get(0).getMessageIdentifier(),is(incomingPayment.getMessageIdentifier()));
+        assertThat(payments.getIncoming().get(0).getAmount(),is(incomingPayment.getAmount()));
+        assertThat(payments.getIncoming().get(0).getCurrency(),is(incomingPayment.getCurrency()));
+    }
 
 }

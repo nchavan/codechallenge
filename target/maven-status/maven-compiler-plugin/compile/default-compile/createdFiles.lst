@@ -1,5 +1,5 @@
+com/code/challenge/Manager.class
 com/code/challenge/Payments.class
 com/code/challenge/App.class
-com/code/challenge/Transaction.class
+com/code/challenge/Payment.class
 com/code/challenge/User.class
-com/code/challenge/CashManagerUser.class

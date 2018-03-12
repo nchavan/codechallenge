@@ -1,6 +1,6 @@
 package com.code.challenge;
 
-public class Transaction {
+public class Payment {
 
     private static final String EMPTY_TRANSACTION = "";
     private String receiverCountry;
@@ -12,7 +12,7 @@ public class Transaction {
     private String amount;
     private String messageIdentifier;
 
-    public Transaction() {
+    public Payment() {
         this.receiverCountry = EMPTY_TRANSACTION;
         this.receiverAccountRef = EMPTY_TRANSACTION;
         this.senderAccountRef = EMPTY_TRANSACTION;
@@ -23,7 +23,7 @@ public class Transaction {
         this.messageIdentifier = EMPTY_TRANSACTION;
     }
 
-    public Transaction(String receiverCountry, String receiverAccountRef, String senderAccountRef, String sendersPaymentReference, String valueDate, String currency, String amount, String messageIdentifier) {
+    public Payment(String receiverCountry, String receiverAccountRef, String senderAccountRef, String sendersPaymentReference, String valueDate, String currency, String amount, String messageIdentifier) {
         this.receiverCountry = receiverCountry;
         this.receiverAccountRef = receiverAccountRef;
         this.senderAccountRef = senderAccountRef;

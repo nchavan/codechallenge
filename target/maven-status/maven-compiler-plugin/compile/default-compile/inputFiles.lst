@@ -1,5 +1,5 @@
-/ldisk/github/codechallenge/src/main/java/com/code/challenge/Transaction.java
+/ldisk/github/codechallenge/src/main/java/com/code/challenge/Manager.java
 /ldisk/github/codechallenge/src/main/java/com/code/challenge/App.java
 /ldisk/github/codechallenge/src/main/java/com/code/challenge/User.java
 /ldisk/github/codechallenge/src/main/java/com/code/challenge/Payments.java
-/ldisk/github/codechallenge/src/main/java/com/code/challenge/CashManagerUser.java
+/ldisk/github/codechallenge/src/main/java/com/code/challenge/Payment.java
