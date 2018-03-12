@@ -10,11 +10,58 @@
   <url>http://maven.apache.org</url>
 
   <dependencies>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
     </dependency>
+
   </dependencies>
 
+  <build>
+    <plugins>
+      <!-- SpotBugs Static Analysis -->
+      <plugin>
+        <groupId>com.github.hazendaz.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>3.1.0-RC4</version>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <!-- specify the version of SpotBugs -->
+          <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs</artifactId>
+            <version>3.1.1</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <excludeFilterFile>src/main/resources/findbugs-exclude.xml</excludeFilterFile>
+          <effort>Max</effort>
+          <threshold>Low</threshold>
+          <failOnError>true</failOnError>
+          <plugins>
+            <plugin>
+              <groupId>com.h3xstream.findsecbugs</groupId>
+              <artifactId>findsecbugs-plugin</artifactId>
+              <version>LATEST</version>
+            </plugin>
+            <plugin>
+              <groupId>com.mebigfatguy.fb-contrib</groupId>
+              <artifactId>fb-contrib</artifactId>
+              <version>7.2.0.sb</version>
+            </plugin>
+          </plugins>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
 </project>
