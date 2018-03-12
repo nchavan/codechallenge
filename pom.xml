@@ -61,7 +61,27 @@
           </plugins>
         </configuration>
       </plugin>
-
+      <!-- Apache Maven PMD Plugin (source code analyser) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.8</version>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>check</goal>
+              <!-- Finding duplicate code with PMD's Copy/Paste Detector (CPD) tool. -->
+              <goal>cpd-check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <excludes>
+            <exclude>**/generated/*.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
