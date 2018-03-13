@@ -1,0 +1,34 @@
+[{
+  "receiverCountry" : "UK",
+  "receiverAccountRef" : "000001",
+  "senderAccountRef" : "571986",
+  "sendersPaymentReference" : "THEIRSENDREF001",
+  "valueDate" : "31122016",
+  "currency" : "GBP",
+  "amount" : "975000"
+},{
+  "receiverCountry" : "UK",
+  "receiverAccountRef" : "000001",
+  "senderAccountRef" : "4564568",
+  "sendersPaymentReference" : "THEIRSENDREF002",
+  "valueDate" : "01012017",
+  "currency" : "GBP",
+  "amount" : "400000"
+},{
+  "receiverCountry" : "UK",
+  "receiverAccountRef" : "000002",
+  "senderAccountRef" : "456488",
+  "sendersPaymentReference" : "THEIRSENDREF003",
+  "valueDate" : "02022017",
+  "currency" : "GBP",
+  "amount" : "297000",
+  "messageIdentifier" : "Alias3"
+},{
+  "receiverCountry" : "UK",
+  "receiverAccountRef" : "000002",
+  "senderAccountRef" : "489462",
+  "sendersPaymentReference" : "THEIRSENDREF004",
+  "valueDate" : "02022017",
+  "currency" : "GBP",
+  "amount" : "297000"
+}]

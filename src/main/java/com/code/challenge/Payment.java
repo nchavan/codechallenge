@@ -2,7 +2,6 @@ package com.code.challenge;
 
 public class Payment {
 
-    private static final String EMPTY_TRANSACTION = "";
     private String receiverCountry;
     private String receiverAccountRef;
     private String senderAccountRef;
@@ -11,17 +10,6 @@ public class Payment {
     private String currency;
     private String amount;
     private String messageIdentifier;
-
-    public Payment() {
-        this.receiverCountry = EMPTY_TRANSACTION;
-        this.receiverAccountRef = EMPTY_TRANSACTION;
-        this.senderAccountRef = EMPTY_TRANSACTION;
-        this.sendersPaymentReference = EMPTY_TRANSACTION;
-        this.valueDate = EMPTY_TRANSACTION;
-        this.currency = EMPTY_TRANSACTION;
-        this.amount = EMPTY_TRANSACTION;
-        this.messageIdentifier = EMPTY_TRANSACTION;
-    }
 
     public Payment(String receiverCountry, String receiverAccountRef, String senderAccountRef, String sendersPaymentReference, String valueDate, String currency, String amount, String messageIdentifier) {
         this.receiverCountry = receiverCountry;
@@ -64,5 +52,19 @@ public class Payment {
 
     public String getMessageIdentifier() {
         return messageIdentifier;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "receiverCountry='" + receiverCountry + '\'' +
+                ", receiverAccountRef='" + receiverAccountRef + '\'' +
+                ", senderAccountRef='" + senderAccountRef + '\'' +
+                ", sendersPaymentReference='" + sendersPaymentReference + '\'' +
+                ", valueDate='" + valueDate + '\'' +
+                ", currency='" + currency + '\'' +
+                ", amount='" + amount + '\'' +
+                ", messageIdentifier='" + messageIdentifier + '\'' +
+                '}';
     }
 }

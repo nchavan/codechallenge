@@ -2,4 +2,7 @@
     <Match>
         <Bug pattern="IMC_IMMATURE_CLASS_NO_TOSTRING" />
     </Match>
+    <Match>
+        <Bug pattern="PATH_TRAVERSAL_IN" />
+    </Match>
 </FindBugsFilter>

@@ -1,31 +1,18 @@
 package com.code.challenge;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class Payments {
+public interface Payments {
 
-    List<Payment> incoming;
-    List<Payment> outgoing;
+    List<Payment> getIncoming();
 
-    public Payments(){
-        incoming = new ArrayList<Payment>();
-        outgoing = new ArrayList<Payment>();
-    }
+    List<Payment> getOutgoing();
 
-    public List<Payment> getIncoming() {
-        return incoming;
-    }
+    void addIncoming(Payment incoming);
 
-    public List<Payment> getOutgoing() {
-        return outgoing;
-    }
+    void addOutgoing(Payment outgoing);
 
-    public void addIncoming(Payment incoming) {
-        this.incoming.add(incoming);
-    }
+    Map<String, Integer> getConsolidatedPayments();
 
-    public void addOutgoing(Payment outgoing) {
-        this.outgoing.add(outgoing);
-    }
 }

@@ -5,7 +5,7 @@ public class Manager implements User {
     Payments payments;
 
     public Manager(){
-        payments = new Payments();
+        payments = new PaymentsManager();
     }
 
     @Override
@@ -16,5 +16,10 @@ public class Manager implements User {
     @Override
     public void addIncomingPayment(Payment incomingPayment) {
         payments.addIncoming(incomingPayment);
+    }
+
+    @Override
+    public void addOutgoingPayment(Payment outgoingPayment) {
+        payments.addOutgoing(outgoingPayment);
     }
 }
